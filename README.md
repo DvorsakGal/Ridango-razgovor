@@ -1,0 +1,1 @@
+Rešena naloga za razgovor.
