@@ -22,7 +22,7 @@ public class GTFSParser {
             while((line = reader.readLine()) != null) {
                 String[] tokens = line.split(",");
                 String tripId = tokens[0];
-                LocalTime arrivalTime = LocalTime.parse(tokens[1], TIME_FORMATTER); //bi znalo jebat
+                LocalTime arrivalTime = LocalTime.parse(tokens[1], TIME_FORMATTER); 
                 String stopId = tokens[3];
                 StopTime stopTime = new StopTime(tripId, arrivalTime, stopId);
                 stopTimes.computeIfAbsent(stopId, k -> new ArrayList<>()).add(stopTime);
@@ -51,7 +51,7 @@ public class GTFSParser {
         Map<String, Route> routes = new HashMap<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filepath))) {
             String line;
-            reader.readLine(); // Skip header
+            reader.readLine(); 
             while ((line = reader.readLine()) != null) {
                 String[] tokens = line.split(",");
                 String routeId = tokens[0];
